@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# ফাইল থাকলে সরাসরি সার্ভ করো
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# books/{slug} → books.php?slug={slug}
+RewriteRule ^books/([a-zA-Z0-9_-]+)$ books.php?slug=$1 [L]
